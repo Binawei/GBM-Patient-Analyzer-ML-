@@ -1,0 +1,2 @@
+"vital_status"
+"age_at_initial_pathologic_diagnosis"
