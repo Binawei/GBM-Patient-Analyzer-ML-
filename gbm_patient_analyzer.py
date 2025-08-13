@@ -31,8 +31,21 @@ def read_clinical_data(clinical_files, required_features):
     
     for file_path in clinical_files:
         with open(file_path, 'r') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
+            # Read header line
+            header_line = f.readline().strip()
+            headers = [h.strip('"') for h in header_line.split(',')]
+            
+            # Read data lines
+            for line in f:
+                values = [v.strip('"') for v in line.strip().split(',')]
+                
+                # Skip first column
+                if len(values) > len(headers):
+                    values = values[1:]  # Remove first column
+                
+                # Create row dictionary
+                row = dict(zip(headers, values))
+                
                 # Find the patient barcode - it could be in different columns
                 patient_barcode = None
                 

@@ -1,1 +1,2 @@
 age_at_initial_pathologic_diagnosis
+days_to_drug_therapy_start

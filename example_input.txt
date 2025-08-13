@@ -7,3 +7,4 @@
 "route_of_administrations"
 "new_tumor_events"
 "radiation_therapy"
+"lost_follow_up"
